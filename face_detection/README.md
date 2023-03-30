@@ -1,4 +1,4 @@
-**Face Detection Algorithm Comparison using FastAPI**
+**Face Detection Algorithms Comparison using FastAPI**
 
 This project aims to compare the performance of various face detection algorithms using FastAPI, a modern web framework for building APIs with Python.
 
