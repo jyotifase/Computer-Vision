@@ -9,11 +9,14 @@ The project will help in understanding the trade-offs between accuracy and speed
 
 Installation
 To run this project, you need to have Python 3.6 or higher installed on your machine. You can then install the required dependencies by running the following command:
+
 pip install -r requirements.txt
 
 Usage
 To start the FastAPI application, run the following command:
+
 python app.py
+
 You can then visit http://localhost:8000/docs in your browser to access the Swagger UI documentation and test the API.
 
 Credits
