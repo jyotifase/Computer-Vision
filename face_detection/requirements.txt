@@ -1,0 +1,18 @@
+# py -m venv fd_env
+# fd_env\Scripts\activate
+# pip install wheel
+# upgrade pip
+# pip install -r requirements.txt
+opencv-python
+imutils
+dlib
+mtcnn
+face-detection
+retina-face
+mediapipe
+
+tensorflow
+facenet-pytorch
+
+fastapi
+uvicorn
