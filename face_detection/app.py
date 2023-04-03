@@ -20,22 +20,6 @@ output_image_path = os.path.join(image_dir,'output_image.png')
 main_dir = 'data'
 os.makedirs(main_dir,exist_ok=True)
 
-def save_image_locally(request_json):
-    try:
-        content=request_json["image"]
-        print("type content =",type(content))
-        if ";base64," in content:
-            data=content.split(";base64,")[1].encode("utf8")
-        else:
-            data=content.encode("utf8")
-        os.makedirs(main_dir,exist_ok=True)
-        image_path="{}/{}".format(main_dir,"local_image.png")
-        with open(image_path, "wb") as fp:
-            fp.write(base64.decodebytes(data))
-        return image_path
-    except Exception as e:
-        print("exception in save_images_locally =",e)
-
 def convert_cv2_to_base64(annotated_frame):
     success, encoded_image1 = cv2.imencode('.png', annotated_frame)
     annotated_image=encoded_image1.tobytes()
@@ -63,10 +47,6 @@ async def process_post_json_data(request: Request):
     request_json=payload.copy()
     content = request_json["image"]
     algo = request_json["Algorithm"]
-    
-    #image_list=[request_json["image"]]
-    #image_local_paths=save_images_locally(image_list)
-    #content = image_list[0]
 
     if ";base64," in content:
         b64_img = content.split(";base64,")[1].encode("utf8")
